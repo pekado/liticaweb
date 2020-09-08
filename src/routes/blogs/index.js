@@ -26,6 +26,7 @@ function getBlogsListing(data, isLoading) {
 	}
 	if (data && data.data) {
 		const { data: blogs } = data;
+		console.log(data)
 		return (
 			<>
 				{blogs.edges.map(blog => (
