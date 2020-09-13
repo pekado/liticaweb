@@ -7,8 +7,12 @@ const blogs = (props) => {
 	const [data, isLoading] = usePrerenderData(props);
 	return (
 		<div class={style.pageBlogs}>
-			<h1 class={style.pageTitle}>My Blogs</h1>
-			{ getBlogsListing(data, isLoading) }
+		<div className={style.header}>
+			<h1 class={style.pageTitle}>Buenos </h1>
+			<h1 class={style.pageTitle}>Aires</h1>
+			<h1 class={style.pageTitle}>Argentina</h1>
+			</div>
+			{ getBlogsListing(data, isLoading)}
 		</div>
 	);
 };
@@ -26,25 +30,24 @@ function getBlogsListing(data, isLoading) {
 	}
 	if (data && data.data) {
 		const { data: blogs } = data;
-		console.log(data)
 		return (
-			<>
-				{blogs.edges.map(blog => (
-				<Link href={`/blog/${blog.id}`}>
-					<article>
-						<h2>{blog.details.title}</h2>
-						<div>
-							{
-								(blog.details.tags.substr(1, blog.details.tags.length - 2).split(',') || []).map(tag => <span class={style.tag}>{tag}</span>)
-							}
-						</div>
-						<p class={style.preview}>
-							{blog.preview}
-						</p>
-					</article>
-				</Link>
-			))}
-			</>
+			<div className={style.gridContainer}>
+				{blogs.edges.map(blog => {
+					return (
+						<Link href={`/blog/${blog.id}`}>
+							<article>
+								<h2>{blog.details.title}</h2>
+								<div>
+									{(blog.details.tags.substr(1, blog.details.tags.length - 2).split(',') || []).map(tag => <span class={style.tag}>{tag}</span>)}
+								</div>
+								<p class={style.preview}>
+									{blog.preview}
+								</p>
+							</article>
+						</Link>
+					);
+				})}
+			</div>
 		);
 	}
 }

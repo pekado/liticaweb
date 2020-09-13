@@ -1,3 +1,15 @@
+.gridContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px 20px;
+
+}
+
+.header{
+  display: flex;
+  justify-content: space-between;
+}
+
 .pageBlogs {
   padding: 0 5%;
 }
@@ -7,6 +19,7 @@
   display: inline-block;
   font-weight: 500;
   font-family: serif;
+  width: 100%;
 }
 
 .pageTitle:after {

@@ -1,7 +1,6 @@
 import { h, Component } from 'preact';
 import { Router } from 'preact-router';
 import { Provider } from '@preact/prerender-data-provider';
-import Header from './header';
 import NotFoundPage from '../routes/notfound';
 
 // Code-splitting is automated for routes
@@ -10,6 +9,7 @@ import Blogs from '../routes/blogs';
 import Blog from '../routes/blog';
 import Contact from '../routes/contact';
 import ContactSuccess from '../routes/contact-success';
+import Sidenav from './sidenav';
 
 export default class App extends Component {
 
@@ -22,10 +22,11 @@ export default class App extends Component {
 	};
 
 	render(props) {
+		console.log(props)
 		return (
 			<Provider value={props}>
 				<div id="app">
-					<Header />
+					<Sidenav/>
 					<Router onChange={this.handleRoute}>
 						<Home path="/" />
 						<Blogs path="/blogs/" />

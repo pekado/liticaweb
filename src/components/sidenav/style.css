@@ -1,0 +1,23 @@
+.sidenav{
+  flex: 1;
+  text-align: center;
+  padding: 0 60px;
+  padding-right: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-right: 2px solid rgba(163, 160, 160, 0.514);
+}
+
+.categories{
+  background-color: rgb(78, 76, 76);
+  color: white;
+  padding: 40px 20px;
+  line-height: 20px;
+  text-align: left;
+}
+
+.footer{
+  background-color: rgb(78, 76, 76);
+  color: white;
+}
